@@ -11,6 +11,7 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
+my48cv-codex/set-up-project-repository-and-structure
 // Return a list of mock recommendations
 app.get('/api/recommendations', (req, res) => {
   const data = [
@@ -31,7 +32,7 @@ app.post('/api/chat', (req, res) => {
   const { message } = req.body;
   res.json({ response: `Echo: ${message || ''}` });
 });
-
+main
 app.listen(PORT, () => {
   console.log(`Backend server running on port ${PORT}`);
 });

@@ -1,4 +1,5 @@
 function App() {
+ my48cv-codex/set-up-project-repository-and-structure
   const [greeting, setGreeting] = React.useState('');
   const [recommendations, setRecommendations] = React.useState([]);
   const [answer, setAnswer] = React.useState('');
@@ -44,6 +45,7 @@ function App() {
       .catch(() => setChatResponse(''));
   }
 
+ main
   return React.createElement(
     React.Fragment,
     null,
@@ -58,6 +60,7 @@ function App() {
         'This platform helps you learn with personalized recommendations, automatic grading, and a chatbot assistant.'
       ),
       React.createElement(
+    my48cv-codex/set-up-project-repository-and-structure
         'section',
         null,
         React.createElement(
@@ -121,6 +124,18 @@ function App() {
           )
         ),
         chatResponse && React.createElement('p', null, chatResponse)
+
+        'button',
+        {
+          onClick: function () {
+            fetch('http://localhost:3001/api/hello')
+              .then(function (res) { return res.json(); })
+              .then(function (data) { alert(data.message); })
+              .catch(function () { alert('Backend unavailable'); });
+          },
+        },
+        'Say Hello'
+main
       )
     )
   );
