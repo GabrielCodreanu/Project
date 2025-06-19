@@ -3,6 +3,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -109,6 +110,14 @@ app.get('/api/courses', authenticateToken, (req, res) => {
     if (err) return res.status(500).json({ error: 'db error' });
     res.json({ courses: rows });
   });
+});
+
+// serve the frontend static files
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// fallback to index.html for SPA routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // add new course (admin only)

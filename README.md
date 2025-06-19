@@ -12,9 +12,9 @@ This repository hosts an educational platform aimed at web, Android, and iOS dev
 
 ## Running the Demo
 
-1. In the `backend` directory, run `npm install` and `npm start` to launch the API server. The server uses an in-memory SQLite database for demonstration.
-2. Open `frontend/index.html` in a browser to load the React app.
-3. The UI now includes pages for home, recommendations, a quiz, a chatbot, login, registration, profile, and an admin dashboard.
+1. In the `backend` directory, run `npm install` and `npm start` to launch the API server. The server uses an in-memory SQLite database for demonstration and also serves the frontend.
+2. Visit `http://localhost:3001` in your browser to use the React app.
+3. The UI includes pages for home, recommendations, a quiz, a chatbot, login, registration, profile, and an admin dashboard.
 4. You can register or log in, view courses, see sample recommendations, try the quiz grading endpoint, chat with the bot, and if logged in as the default admin (`admin@example.com` / `admin`), add new courses.
 
 Running the Demo

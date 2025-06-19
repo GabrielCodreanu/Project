@@ -3,6 +3,8 @@
 This directory hosts the Node.js/Express.js server and all backend code. It includes database access layers for SQL databases such as MySQL or PostgreSQL. The demo uses an in-memory SQLite database for simplicity, but the code can be adapted to other engines.
 
 
+3. Open `http://localhost:3001` in your browser. The backend serves the frontend
+   files so you can access the React app directly from this URL.
 
 This directory hosts the Node.js/Express.js server and all backend code. It includes database access layers for SQL databases such as MySQL or PostgreSQL. The demo uses an in-memory SQLite database for simplicity, but the code can be adapted to other engines.
 

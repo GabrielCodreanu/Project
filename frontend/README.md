@@ -4,7 +4,7 @@ This directory contains the React web application for the platform.
 
 ## Files
 
-- `index.html` – Entry point that loads React, React Router, and Babel from CDNs and renders the application.
+- `index.html` – Entry point that loads React, React Router, and Babel from CDNs and renders the application. When the backend is running this file is served at `http://localhost:3001`.
 - `style.css` – Basic black and gold theme used across the pages.
 - `src/app.js` – Application code using React Router and a small authentication context.
 
