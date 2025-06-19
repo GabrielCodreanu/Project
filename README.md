@@ -1,6 +1,6 @@
 # Educational Platform
 
-This repository hosts an educational platform aimed at web, Android, and iOS devices. It uses a React frontend and a Node.js/Express backend with a SQL database. AI features include personalized recommendations, automatic grading, and a chatbot assistant.
+This repository hosts an educational platform aimed at web, Android, and iOS devices. It uses a React frontend, a mobile React Native app, and a Node.js/Express backend with a SQL database. AI features include personalized recommendations, automatic grading, and a chatbot assistant.
 
 ## Project Structure
 
@@ -8,3 +8,4 @@ This repository hosts an educational platform aimed at web, Android, and iOS dev
 - **backend/** – Node.js/Express.js server and database layer
 - **ai/** – AI models and scripts
 - **docs/** – Documentation and design resources
+- **mobile/** – React Native app for Android and iOS

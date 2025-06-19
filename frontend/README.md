@@ -1,6 +1,9 @@
 # Frontend
 
 This directory contains a simple React application demonstrating the look and feel of the platform.
+Clicking the "Say Hello" button makes a request to the backend's `/api/hello`
+endpoint and displays the returned message.
+
 Files
 - `index.html` – Entry point that loads React and renders the application.
 - `style.css` – Basic black and gold theme used across the pages.

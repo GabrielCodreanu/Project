@@ -16,10 +16,13 @@ function App() {
         'button',
         {
           onClick: function () {
-            alert('More features coming soon!');
+            fetch('http://localhost:3001/api/hello')
+              .then(function (res) { return res.json(); })
+              .then(function (data) { alert(data.message); })
+              .catch(function () { alert('Backend unavailable'); });
           },
         },
-        'Get Started'
+        'Say Hello'
       )
     )
   );
