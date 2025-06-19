@@ -11,6 +11,13 @@ const JWT_SECRET = process.env.JWT_SECRET || 'supersecret';
 app.use(cors());
 app.use(express.json());
 
+const app = express();
+const PORT = process.env.PORT || 3001;
+const JWT_SECRET = process.env.JWT_SECRET || 'supersecret';
+const app = express();
+const PORT = process.env.PORT || 3001;
+app.use(cors());
+app.use(express.json());
 // simple SQLite database for demo purposes
 const db = new sqlite3.Database(':memory:');
 
@@ -116,6 +123,8 @@ app.post('/api/courses', authenticateToken, requireAdmin, (req, res) => {
 });
 
 // Return a list of mock recommendations
+my48cv-codex/set-up-project-repository-and-structure
+main
 app.get('/api/recommendations', (req, res) => {
   const data = [
     { id: 1, title: 'Introduction to Algebra', type: 'course' },
@@ -136,6 +145,8 @@ app.post('/api/chat', (req, res) => {
   res.json({ response: `Echo: ${message || ''}` });
 });
 
+ fwblsu-codex/set-up-project-repository-and-structure
+main
 app.listen(PORT, () => {
   console.log(`Backend server running on port ${PORT}`);
 });
