@@ -1,4 +1,5 @@
 function App() {
+
  my48cv-codex/set-up-project-repository-and-structure
   const [greeting, setGreeting] = React.useState('');
   const [recommendations, setRecommendations] = React.useState([]);
@@ -45,6 +46,7 @@ function App() {
       .catch(() => setChatResponse(''));
   }
 
+
  main
   return React.createElement(
     React.Fragment,
@@ -60,6 +62,8 @@ function App() {
         'This platform helps you learn with personalized recommendations, automatic grading, and a chatbot assistant.'
       ),
       React.createElement(
+ fwblsu-codex/set-up-project-repository-and-structure
+
     my48cv-codex/set-up-project-repository-and-structure
         'section',
         null,

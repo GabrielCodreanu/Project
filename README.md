@@ -9,9 +9,9 @@ This repository hosts an educational platform aimed at web, Android, and iOS dev
 - **ai/** – AI models and scripts
 - **docs/** – Documentation and design resources
 - **mobile/** – React Native app for Android and iOS
+
 Running the Demo
 
 1. In the `backend` directory, run `npm install` and `npm start` to launch the API server.
 2. Open `frontend/index.html` in a browser to load the React app.
 3. The UI allows you to test the greeting, recommendations, grading, and chat features.
-

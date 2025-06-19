@@ -15,3 +15,4 @@ The default server listens on port `3001` and exposes several JSON endpoints:
 - `POST /api/chat` – Echoes back the chat message
 
 The default server listens on port `3001` and exposes a `/api/hello` endpoint returning a simple JSON message.
+
