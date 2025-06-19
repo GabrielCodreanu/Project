@@ -15,4 +15,3 @@ This directory documents the available backend API endpoints.
 - `POST /api/chat` – Echoes the provided chat message
 
 This directory will contain detailed information about the backend API endpoints.
-

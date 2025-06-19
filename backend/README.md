@@ -1,5 +1,8 @@
 # Backend
 
+This directory hosts the Node.js/Express.js server and all backend code. It includes database access layers for SQL databases such as MySQL or PostgreSQL. The demo uses an in-memory SQLite database for simplicity, but the code can be adapted to other engines.
+
+
 
 This directory hosts the Node.js/Express.js server and all backend code. It includes database access layers for SQL databases such as MySQL or PostgreSQL. The demo uses an in-memory SQLite database for simplicity, but the code can be adapted to other engines.
 
@@ -24,5 +27,4 @@ The default server listens on port `3001` and exposes several JSON endpoints:
 - `POST /api/chat` – Echoes back the chat message
 
 The default server listens on port `3001` and exposes a `/api/hello` endpoint returning a simple JSON message.
-
 

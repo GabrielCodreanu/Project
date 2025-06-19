@@ -6,5 +6,5 @@ This folder contains AI models and scripts for features such as personalized rec
 
 - `recommendation.py` – Simple placeholder returning mock recommendations.
 
-- `recommendation.py` - Simple placeholder returning mock recommendations.
 
+- `recommendation.py` - Simple placeholder returning mock recommendations.
