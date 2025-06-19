@@ -13,3 +13,6 @@ The default server listens on port `3001` and exposes several JSON endpoints:
 - `GET /api/recommendations` – Returns a list of recommended courses or quizzes
 - `POST /api/grade` – Accepts answers and returns a mock score
 - `POST /api/chat` – Echoes back the chat message
+
+The default server listens on port `3001` and exposes a `/api/hello` endpoint returning a simple JSON message.
+

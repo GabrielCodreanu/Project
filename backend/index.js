@@ -11,7 +11,8 @@ app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello from the backend!' });
 });
 
-// Return a list of mock recommendations
+my48cv-codex/set-up-project-repository-and-structure
+main
 app.get('/api/recommendations', (req, res) => {
   const data = [
     { id: 1, title: 'Introduction to Algebra', type: 'course' },
@@ -31,7 +32,8 @@ app.post('/api/chat', (req, res) => {
   const { message } = req.body;
   res.json({ response: `Echo: ${message || ''}` });
 });
-
+ fwblsu-codex/set-up-project-repository-and-structure
+main
 app.listen(PORT, () => {
   console.log(`Backend server running on port ${PORT}`);
 });
