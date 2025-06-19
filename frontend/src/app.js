@@ -83,6 +83,7 @@ function AdminRoute({ children, ...rest }) {
 
 function Home() {
   const [courses, setCourses] = React.useState([]);
+  const [greeting, setGreeting] = React.useState('');
   const auth = useAuth();
 
   React.useEffect(() => {
@@ -94,11 +95,16 @@ function Home() {
         .then(data => setCourses(data.courses || []))
         .catch(() => setCourses([]));
     }
+    fetch('http://localhost:3001/api/hello')
+      .then(res => res.json())
+      .then(data => setGreeting(data.message))
+      .catch(() => setGreeting(''));
   }, [auth.token]);
 
   return (
     <div>
       <h1>Home</h1>
+      <p>{greeting}</p>
       {auth.token ? (
         <>
           <h2>Available Courses</h2>
@@ -182,6 +188,81 @@ function Profile() {
   );
 }
 
+function Recommendations() {
+  const [items, setItems] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3001/api/recommendations')
+      .then(res => res.json())
+      .then(data => setItems(data.recommendations || []));
+  }, []);
+
+  return (
+    <div>
+      <h1>Recommendations</h1>
+      <ul>
+        {items.map(i => (
+          <li key={i.id}>{i.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Quiz() {
+  const [answer, setAnswer] = React.useState('');
+  const [score, setScore] = React.useState(null);
+
+  const submit = e => {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/grade', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answer })
+    })
+      .then(res => res.json())
+      .then(data => setScore(data.score));
+  };
+
+  return (
+    <div>
+      <h1>Quiz</h1>
+      <form onSubmit={submit}>
+        <input value={answer} onChange={e => setAnswer(e.target.value)} placeholder="Your answer" />
+        <button type="submit">Submit</button>
+      </form>
+      {score !== null && <p>Your score: {score}</p>}
+    </div>
+  );
+}
+
+function Chat() {
+  const [message, setMessage] = React.useState('');
+  const [response, setResponse] = React.useState('');
+
+  const send = e => {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    })
+      .then(res => res.json())
+      .then(data => setResponse(data.response));
+  };
+
+  return (
+    <div>
+      <h1>Chatbot</h1>
+      <form onSubmit={send}>
+        <input value={message} onChange={e => setMessage(e.target.value)} placeholder="Say something" />
+        <button type="submit">Send</button>
+      </form>
+      {response && <p>{response}</p>}
+    </div>
+  );
+}
+
 function Admin() {
   const [title, setTitle] = React.useState('');
   const [courses, setCourses] = React.useState([]);
@@ -222,6 +303,9 @@ function Navigation() {
   return (
     <nav>
       <Link to="/">Home</Link> |{' '}
+      <Link to="/recommendations">Recommendations</Link> |{' '}
+      <Link to="/quiz">Quiz</Link> |{' '}
+      <Link to="/chat">Chat</Link> |{' '}
       {auth.token ? (
         <>
           <Link to="/profile">Profile</Link>{' '}
@@ -245,6 +329,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/recommendations" component={Recommendations} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/chat" component={Chat} />
           <PrivateRoute path="/profile">
             <Profile />
           </PrivateRoute>
